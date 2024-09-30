@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-container label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .form-container input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .description {
+            margin-top: 20px;
+        }
+        .description p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>BMI Calculator</h2>
+    <form>
+        <label for="height">Height (in cm):</label>
+        <input type="text" id="height" name="height" required>
+
+        <label for="weight">Weight (in kg):</label>
+        <input type="number" id="weight" name="weight" required>
+
+        <input type="submit" value="Calculate BMI">
+    </form>
+
+    <div class="description">
+        <h3>BMI Categories</h3>
+        <div class="result"></div>
+        <p><strong>Underweight:</strong> Less than 18.5</p>
+        <p><strong>Optimum range:</strong> 18.5 to 24.9</p>
+        <p><strong>Overweight:</strong> 25 to 29.9</p>
+        <p><strong>Class I obesity:</strong> 30 to 34.9</p>
+        <p><strong>Class II obesity:</strong> 35 to 39.9</p>
+    </div>
+</div>
+<script>
+    let form = document.querySelector('form')
+      form.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        let result =   document.querySelector('.result');
+        let height = document.querySelector('#height').value;
+        if(height != '' || height < 1 || isNaN(height)){
+            result.innerHTML = `Please enter valid hight ${height}`;
+        }
+        let weight = document.querySelector('#weight').value;
+        let heightIn_meter = height/100;
+        let heithSqure  = (heightIn_meter*heightIn_meter);
+        let bim = weight/heithSqure;
+        //console.log(bim)
+        
+         result.innerHTML = `your BMI Result: ${bim.toFixed(2)}`;
+      })
+</script>
+
+</body>
+</html>
