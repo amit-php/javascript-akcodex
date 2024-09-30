@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four Colored Boxes</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+        }
+        .red-box {
+            background-color: red;
+        }
+        .green-box {
+            background-color: green;
+        }
+        .gray-box {
+            background-color: gray;
+        }
+        .yellow-box {
+            background-color: yellow;
+            color: black; /* Better visibility on yellow background */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="parentElement">
+        <div class="box red-box" id="red"></div>
+        <div class="box green-box" id="green"></div>
+        <div class="box gray-box" id="gray"></div>
+        <div class="box yellow-box" id="yellow"></div>
+    </div>
+<script>
+    // let bodyy = document.querySelector('body');
+    let allButton = document.querySelectorAll('.box');
+        allButton.forEach((item)=>{
+            item.addEventListener('click',(e)=>{
+                document.body.style.backgroundColor=e.target.id
+               //console.log(e);
+               //console.log(e.target.id)
+            })
+        })
+        
+    
+       </script>
+</body>
+</html>
