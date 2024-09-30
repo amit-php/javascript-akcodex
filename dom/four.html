@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+<meta charset="UTF-8">
+<title>Dom maunuplation create element</title>
+<style>
+    .contaner{
+        background-color:black;
+        color: aliceblue;
+
+    }
+</style>
+    </head>
+    <body class="contaner">
+   <ul class="language">
+    <li>javascript</li>
+   </ul>
+<script>
+function addLanguage(params) {
+    let lang = document.querySelector('.language');
+    let li = document.createElement('li');
+    li.append(params)
+    lang.appendChild(li)
+}
+const typeOfLang = ["php","java","python","rubby"];
+typeOfLang.forEach(addLanguage);
+//edit
+const secondli = document.querySelector('li:nth-child(2)')
+const newli = document.createElement('li');
+newli.innerHTML = "moj";
+secondli.replaceWith(newli)
+//edit
+const firstlid = document.querySelector('li:first-child');
+firstlid.outerHTML= "<li>typscript</li>";
+//remove
+const rmli = document.querySelector('li:last-child');
+rmli.remove();
+</script>
+    </body>
+</html>
