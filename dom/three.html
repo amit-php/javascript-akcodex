@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+<meta charset="UTF-8">
+<title>Dom maunuplation create element</title>
+<style>
+    .contaner{
+        background-color:black;
+        color: aliceblue;
+
+    }
+</style>
+    </head>
+    <body class="contaner">
+   
+<script>
+
+let div = document.createElement('div');
+console.log(div)
+div.className ="divclass";
+div.id = "title";
+div.setAttribute('title','genrated title');
+const text = document.createTextNode('This is text note');
+div.append(text);
+document.body.appendChild(div);
+
+</script>
+    </body>
+</html>
