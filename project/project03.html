@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+        <style> #clock {
+            font-family: 'Digital-7', sans-serif; /* Optional digital font if you want */
+            font-size: 48px;
+            color: #0f0; /* Green color similar to calculator displays */
+            background-color: #000; /* Black background */
+            padding: 20px;
+            border-radius: 10px;
+            width: fit-content;
+            display: inline-block;
+            text-align: center;
+            letter-spacing: 5px;
+            box-shadow: 0 0 20px #0f0; /* Glowing effect */
+            text-align: center;
+        }
+        #clock {
+            font-family: 'Orbitron', sans-serif; /* Using a digital font for a more realistic feel */
+        }
+        </style>
+       
+        
+     
+        
+        
+    </head>
+    <body>
+    <div id="clock"></div>
+    <script>
+        let clock = document.getElementById('clock');
+        clock.style.textAlign = "center"
+        clock.style
+       // console.log(clock);
+       
+       // console.log(date.toLocaleTimeString());
+        
+        // setInterval(function(){
+        //     clock.innerHTML = date.toLocaleTimeString;
+        // },1000);
+        setInterval(function date() {
+            const date = new Date();
+            clock.innerHTML = date.toLocaleTimeString();
+        },1000)
+    </script>
+</body>
+</html>
